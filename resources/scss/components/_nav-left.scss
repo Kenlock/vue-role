@@ -1,0 +1,141 @@
+.nav-auth
+{
+    -webkit-transition: width .25s ease-in-out;
+    -moz-transition: width .25s ease-in-out;
+    -o-transition: width .25s ease-in-out;
+    transition: width .25s ease-in-out;
+    width: 300px;
+    box-shadow: none;
+    border: none;
+
+    .profile
+    {
+        // border: 1px solid rgba(var(--nav-foreground-color), .05);
+        border-radius: 5px;
+
+		.profile-picture
+		{
+			border-radius: 50%;
+			overflow: hidden;
+			height: 40px;
+			width: 40px;
+
+            img
+		    {
+                object-fit: cover;
+                min-height: 100%;
+            }
+		}
+
+        .profile-content
+        {
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .profile-selector
+        {
+            background-color: rgba(var(--nav-foreground-color), .015);
+        }
+    }
+
+    ul.nav-list
+    {
+        min-width: 200px;
+
+        li.nav-item
+        {
+            position: relative;
+
+            a.nav-link
+            {
+                display: flex !important;
+
+                .icon
+                {
+                    width: 30px;
+                    text-align: left;
+                }
+
+                .label
+                {
+                    line-height: 1.2rem;
+                }
+
+                &.router-link-exact-active,
+                &.is-active
+                {
+                    position: relative;
+
+                    &:after
+                    {
+                        background: rgb(var(--nav-foreground-color));
+                        content: " ";
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        height: 20px;
+                        border-radius: 10px;
+                        width: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .dropdown
+    {
+        //
+
+        .dropdown-content
+        {
+            //
+
+            ul.nav-dropdown-items
+            {
+                margin: 0;
+                margin-left: 20px;
+                padding: 0;
+                display: block;
+
+                li.nav-item
+                {
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .label
+    {
+        transition: .5s;
+        width: 100%;
+    }
+
+    &.nav-collapsed
+    {
+        width: 70px;
+
+        .label
+        {
+            visibility: hidden;
+            opacity: 0;
+            transform: translate3d(0, 0, 100%);
+        }
+
+        .dropdown-content
+        {
+            z-index: 999;
+            position: absolute;
+            background-color: #FFFFFF;
+            border: 1px solid rgba(var(--color-dark), .05);
+            top: 10px;
+            left: 80px;
+        }
+    }
+}
